@@ -1,0 +1,9 @@
+body{
+    background-color: aquamarine;
+    color: yellowgreen;
+}
+
+.hea{
+    display: flex;
+    justify-content: center;
+}
