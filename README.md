@@ -1,10 +1,10 @@
-Historia 2: Selección de monedas
- 
-## Historia 
-Como usuario quiero seleccionar una moneda de origen y una de destino, para poder convertir entre las monedas que yo elija.
+Historia 3: Conversion real de monedas
 
-## Criterios de aceptación
-Dos <select> para elegir moneda de origen y de destino
-Al menos deben estar disponibles USD y EUR
-Valores por defecto USD (Origen) y EUR (Destino)
-Opción de validación futura: evitar que se elija la misma moneda (opcional ahora)
+## Objetivo 
+Mostrar cuánto vale la cantidad ingresada en la moneda destino, usando datos reales de una Api
+
+## Cambios que vamos a hacer
+1) Agregar un botón convertir que dispare la app
+2) Usar fetch() para consultar la API con los valores actuales
+3) Mostrar el resultado de la conversión
+4) Manejar loading y errores básicos 
