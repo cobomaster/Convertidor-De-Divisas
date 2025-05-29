@@ -1,5 +1,5 @@
-import './App.css'
-import { useState } from 'react'
+import './App.css';
+import { useState } from 'react';
 
 function App() {
   const [cantidad, setCantidad] = useState("");
@@ -10,7 +10,9 @@ function App() {
   const [error, setError] = useState("");
 
   const handleConvert = async () => {
-    if (!cantidad || isNaN(cantidad) || Number(cantidad) <= 0) {
+    const cantidadNum = parseFloat(cantidad);
+
+    if (isNaN(cantidadNum) || cantidadNum <= 0) {
       setError("Introduce una cantidad válida");
       setResultado(null);
       return;
@@ -26,25 +28,24 @@ function App() {
     setCargando(true);
 
     try {
-      const res = await fetch(
-        `https://api.frankfurter.app/latest?amount=${cantidad}&from=${origen}&to=${destino}`
-      );
+      const res = await fetch(`https://api.frankfurter.app/latest?amount=${cantidadNum}&from=${origen}&to=${destino}`);
       const data = await res.json();
-
       if (data.rates && data.rates[destino]) {
         setResultado(data.rates[destino].toFixed(2));
       } else {
         setError("No se pudo obtener la conversión");
+        setResultado(null);
       }
-    } catch (err) {
+    } catch {
       setError("Error al conectar con la API");
+      setResultado(null);
     } finally {
       setCargando(false);
     }
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
+    <div className="app-container">
       <h1>Convertidor de Divisas</h1>
 
       <input
@@ -54,27 +55,32 @@ function App() {
         placeholder="Cantidad"
       />
 
-      <select value={origen} onChange={(e) => setOrigen(e.target.value)}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-      </select>
+      <div className="select-row">
+        <select value={origen} onChange={(e) => setOrigen(e.target.value)}>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="MXN">MXN</option>
+        </select>
 
-      <span> → </span>
+        <span className="arrow">→</span>
 
-      <select value={destino} onChange={(e) => setDestino(e.target.value)}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-      </select>
+        <select value={destino} onChange={(e) => setDestino(e.target.value)}>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="MXN">MXN</option>
+        </select>
+      </div>
 
-      <br />
-      <button onClick={handleConvert} style={{ marginTop: "1rem" }}>
-        Convertir
-      </button>
+      <button onClick={handleConvert}>Convertir</button>
 
-      {cargando && <p>Cargando...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {cargando && <p className="loading">Cargando...</p>}
+      {error && <p className="error">{error}</p>}
       {resultado && (
-        <p>
+        <p className="result">
           {cantidad} {origen} = <strong>{resultado} {destino}</strong>
         </p>
       )}

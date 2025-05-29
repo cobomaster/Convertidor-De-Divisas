@@ -1,10 +1,15 @@
-Historia 3: Conversion real de monedas
+Historia 4: Añadir mas divisas al conversor
 
-## Objetivo 
-Mostrar cuánto vale la cantidad ingresada en la moneda destino, usando datos reales de una Api
+## Criterios de aceptación 
+Debe haber al menos 6 divisas diferentes en los <SELECT>
+-- USD (Dólar Estadounidense)
+-- EUR (EURO)
+-- GBP (Libra Esterlina)
+-- JPY (Yen Japonés)
+-- ARS (Peso Argentino)
+-- MXN (Peso Mexicano)
+El conversor debe seguir funcionando correctamente con cualquiera de ellas
 
-## Cambios que vamos a hacer
-1) Agregar un botón convertir que dispare la app
-2) Usar fetch() para consultar la API con los valores actuales
-3) Mostrar el resultado de la conversión
-4) Manejar loading y errores básicos 
+## Tareas técnicas
+1) Actualizar los <option> de los <select> con más monedas
+2) Probar que todas funcionan correctamente con la API.

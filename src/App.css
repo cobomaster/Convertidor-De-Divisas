@@ -1,17 +1,80 @@
-body{
-    background-color: aquamarine;
-    color: yellowgreen;
+.app-container {
+  padding: 2rem;
+  font-family: sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.hea{
-    display: flex;
-    justify-content: center;
+h1 {
+  text-align: center;
+  color: #333;
 }
 
-.contenedor{
-    background-color: red;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input[type="number"], select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.select-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.select-row select {
+  flex: 1;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #666;
+  user-select: none;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #0077ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #222;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
 }
