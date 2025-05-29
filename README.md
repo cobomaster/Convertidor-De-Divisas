@@ -1,16 +1,10 @@
-Historia 1: Entrada de Datos
+Historia 2: Selección de monedas
+ 
+## Historia 
+Como usuario quiero seleccionar una moneda de origen y una de destino, para poder convertir entre las monedas que yo elija.
 
-## ¿Qué se implementó?
-Se creó un input controlado en React para que el usuario pueda ingresar una cantidad de dinero
-Se agregó un botón para validar la entrada
-Se usó useState para gestionar el valor ingresado y el mensaje de validación
-se muestra un mensaje:
-        Si es valido ( +0 ) devuelve la cantidad
-        Si es invalido ( -0 ) devuelve un mensaje 
-
-
-## Tecnologías usadas:
--- React (useState)
--- Html Semántico (label, input, button, p)
--- Estilos inline mínimos para distinguir mensajes
-
+## Criterios de aceptación
+Dos <select> para elegir moneda de origen y de destino
+Al menos deben estar disponibles USD y EUR
+Valores por defecto USD (Origen) y EUR (Destino)
+Opción de validación futura: evitar que se elija la misma moneda (opcional ahora)
