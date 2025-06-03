@@ -78,3 +78,67 @@ button:hover {
   font-style: italic;
   color: #555;
 }
+
+/* Media Queries */
+
+/* Tablets (600px - 899px) */
+@media (max-width: 899px) and (min-width: 600px) {
+  .app-container {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  input[type="number"], select {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  .select-row {
+    gap: 0.75rem;
+  }
+}
+
+/* Smartphones (menos de 600px) */
+@media (max-width: 599px) {
+  .app-container {
+    max-width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="number"], select {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .select-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .select-row select {
+    width: 100%;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+}
